@@ -10,6 +10,7 @@
 #import "BuyOrRobViewController.h"
 #import "BuyViewController.h"
 #import "LoginViewOperation.h"
+#import "UserDefaults.h"
 
 @interface Index0ViewController ()
 {
@@ -32,9 +33,12 @@
 
 -(void)loadView{
     [super loadView];
-    
-    loginViewOperation = [[LoginViewOperation alloc] init];
-    [loginViewOperation presentLoginViewControllerInViewController:self];
+
+    UserDefaults *userDefaults = [[UserDefaults alloc] init];
+    if (![[userDefaults isLogin] isEqualToString:@"YES"]) {
+        loginViewOperation = [[LoginViewOperation alloc] init];
+        [loginViewOperation presentLoginViewControllerInViewController:self];
+    }
 }
 
 - (void)viewDidLoad
@@ -80,13 +84,9 @@
 
 #pragma Notification
 /*
- 1，设置login status 为登录状态
- 2，在当前viewcontroller loadData
+ 1，在当前viewcontroller loadData
  */
 -(void)loginSuccessAction:(NSNotification *)nc{
-    NSString *name = nc.name;
-    NSDictionary *dict = nc.userInfo;
-    NSLog(@"%@    %@     %@",name,dict,nc.object);
     [self loadData];
 }
 

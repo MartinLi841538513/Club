@@ -145,6 +145,38 @@
             </objects>
             <point key="canvasLocation" x="985" y="1051"/>
         </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="umc-vZ-tWz">
+            <objects>
+                <viewController storyboardIdentifier="UserDetailViewController" id="Vtn-S7-CrO" customClass="UserDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xod-Fw-Fba"/>
+                        <viewControllerLayoutGuide type="bottom" id="7WB-oY-AON"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nsx-eb-ofF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTv-Th-aHa">
+                                <rect key="frame" x="20" y="465" width="280" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="退出账号">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutAction:" destination="Vtn-S7-CrO" eventType="touchUpInside" id="2uR-Hy-Kdj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5v-u2-KyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="1050"/>
+        </scene>
         <!--Navigation Controller - index1-->
         <scene sceneID="m9I-QY-PxS">
             <objects>

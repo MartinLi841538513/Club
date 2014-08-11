@@ -11,6 +11,8 @@
 		222CC39E199866E40091AA1D /* UserInfosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC39C199866E40091AA1D /* UserInfosModel.m */; };
 		222CC3A2199869770091AA1D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC3A1199869760091AA1D /* LoginService.m */; };
 		222CC3A5199869840091AA1D /* RegisterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC3A4199869840091AA1D /* RegisterService.m */; };
+		2235054A1998A70B0026B92F /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223505491998A70B0026B92F /* UserDetailViewController.m */; };
+		2235054D1998AA610026B92F /* UserDetailService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235054C1998AA610026B92F /* UserDetailService.m */; };
 		224B35111995DAB7009523F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35101995DAB7009523F6 /* Foundation.framework */; };
 		224B35131995DAB7009523F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35121995DAB7009523F6 /* CoreGraphics.framework */; };
 		224B35151995DAB7009523F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35141995DAB7009523F6 /* UIKit.framework */; };
@@ -54,6 +56,7 @@
 		22BAA57A19979C4400B1948A /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BAA57819979C4400B1948A /* User.storyboard */; };
 		22BAA57D19979E5100B1948A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAA57C19979E5100B1948A /* RegisterViewController.m */; };
 		22BAA5801997AF7000B1948A /* LoginViewOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BAA57F1997AF7000B1948A /* LoginViewOperation.m */; };
+		22EB0C651998A38D008B98CD /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22EB0C641998A38D008B98CD /* userIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,10 @@
 		222CC3A1199869760091AA1D /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		222CC3A3199869840091AA1D /* RegisterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterService.h; sourceTree = "<group>"; };
 		222CC3A4199869840091AA1D /* RegisterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterService.m; sourceTree = "<group>"; };
+		223505481998A70B0026B92F /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		223505491998A70B0026B92F /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
+		2235054B1998AA610026B92F /* UserDetailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailService.h; sourceTree = "<group>"; };
+		2235054C1998AA610026B92F /* UserDetailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailService.m; sourceTree = "<group>"; };
 		224B350D1995DAB7009523F6 /* Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Club.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224B35101995DAB7009523F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		224B35121995DAB7009523F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +152,7 @@
 		22BAA57C19979E5100B1948A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		22BAA57E1997AF7000B1948A /* LoginViewOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewOperation.h; sourceTree = "<group>"; };
 		22BAA57F1997AF7000B1948A /* LoginViewOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewOperation.m; sourceTree = "<group>"; };
+		22EB0C641998A38D008B98CD /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,8 @@
 				222CC3A1199869760091AA1D /* LoginService.m */,
 				222CC3A3199869840091AA1D /* RegisterService.h */,
 				222CC3A4199869840091AA1D /* RegisterService.m */,
+				2235054B1998AA610026B92F /* UserDetailService.h */,
+				2235054C1998AA610026B92F /* UserDetailService.m */,
 			);
 			name = User;
 			path = Services/User;
@@ -374,6 +384,7 @@
 		22557A01199645A3001B5FCC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22EB0C641998A38D008B98CD /* userIcon.png */,
 				22557A02199645A3001B5FCC /* carota2.jpg */,
 				22557A03199645A3001B5FCC /* lotteryDraw.png */,
 				22557A04199645A3001B5FCC /* vegetables.png */,
@@ -406,6 +417,8 @@
 				22BAA57C19979E5100B1948A /* RegisterViewController.m */,
 				22BAA57E1997AF7000B1948A /* LoginViewOperation.h */,
 				22BAA57F1997AF7000B1948A /* LoginViewOperation.m */,
+				223505481998A70B0026B92F /* UserDetailViewController.h */,
+				223505491998A70B0026B92F /* UserDetailViewController.m */,
 			);
 			name = User;
 			path = Controllers/User;
@@ -490,6 +503,7 @@
 				225AFF211997256200680E17 /* MenuCollectionCell.xib in Resources */,
 				22557A05199645A3001B5FCC /* carota2.jpg in Resources */,
 				22BAA5701997762700B1948A /* ItemCell.xib in Resources */,
+				22EB0C651998A38D008B98CD /* userIcon.png in Resources */,
 				22557A07199645A3001B5FCC /* vegetables.png in Resources */,
 				224B35291995DAB7009523F6 /* Images.xcassets in Resources */,
 				224B351B1995DAB7009523F6 /* InfoPlist.strings in Resources */,
@@ -516,6 +530,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2235054A1998A70B0026B92F /* UserDetailViewController.m in Sources */,
+				2235054D1998AA610026B92F /* UserDetailService.m in Sources */,
 				225579D919960398001B5FCC /* Index1Service.m in Sources */,
 				224B35571995DE3F009523F6 /* Index4ViewController.m in Sources */,
 				225AFF221997256200680E17 /* PastRobItemCell.m in Sources */,

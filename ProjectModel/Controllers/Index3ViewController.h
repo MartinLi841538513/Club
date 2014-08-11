@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Index3ViewController : UIViewController
+@interface Index3ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

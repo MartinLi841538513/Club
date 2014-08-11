@@ -7,9 +7,12 @@
 //
 
 #import "Index3ViewController.h"
+#import "UserDetailViewController.h"
 
 @interface Index3ViewController ()
-
+{
+    UITableView *tableview;
+}
 @end
 
 @implementation Index3ViewController
@@ -21,6 +24,14 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)loadView{
+    [super loadView];
+    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, NavigationBarFrame.size.height+StatusBarFrame.size.height, DeviceFrame.size.width,64)];
+    tableview.delegate = self;
+    tableview.dataSource = self;
+    [self.view addSubview:tableview];
 }
 
 - (void)viewDidLoad
@@ -36,15 +47,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma UITableviewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.imageView.image = [UIImage imageNamed:@"userIcon.png"];
+    cell.textLabel.text = @"王宝强";
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger section = indexPath.section;
+    NSLog(@"didSelect:%d",section);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UserDetailViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
+
 
 @end
