@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegisterViewController.h"
 
 @protocol LoginViewControllerDelegate <NSObject>
 
 @optional
--(void)loginActionWithViewController:(UIViewController *)viewController;
+-(void)loginSuccessedActionWithViewController:(UIViewController *)viewController;
 
 @end
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<RegisterViewControllerDelegate>
 
 @property (nonatomic,retain)id<LoginViewControllerDelegate> delegate;
 

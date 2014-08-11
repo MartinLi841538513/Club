@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "RegisterService.h"
 
 @interface RegisterViewController ()
 {
@@ -14,17 +15,15 @@
     __weak IBOutlet UITextField *code;
     __weak IBOutlet UITextField *password;
     __weak IBOutlet UITextField *Passwd;
-
+    RegisterService *registerService;
 }
 @end
 
 @implementation RegisterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        registerService = [[RegisterService alloc] init];
     }
     return self;
 }
@@ -33,6 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"注册";
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,9 +42,20 @@
 }
 
 - (IBAction)sendCodeAction:(id)sender {
+    
+    
 }
+
+
 - (IBAction)registerAction:(id)sender {
+    NSString *name = loginname.text;
+    NSString *codeNumber = code.text;
+    NSString *passwd = password.text;
+    NSString *passwdConfirm = Passwd.text;
+    NSLog(@"%@   %@",passwd,passwdConfirm);
+    [registerService registerWithName:name andCode:codeNumber andPasswd:passwd andPasswordConfirm:passwdConfirm onViewController:self];
 }
+
 
 
 @end

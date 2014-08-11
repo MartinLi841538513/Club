@@ -11,5 +11,9 @@
 
 @interface LoginViewOperation : NSObject
 
+/*
+ 1，在当前viewcontroller调出loginviewController
+ 2，给当前viewcontroller添加监听事件
+ */
 -(void)presentLoginViewControllerInViewController:(UIViewController *)viewController;
 @end

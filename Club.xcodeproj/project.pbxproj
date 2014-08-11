@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222CC39D199866E40091AA1D /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC39A199866E40091AA1D /* UserDefaults.m */; };
+		222CC39E199866E40091AA1D /* UserInfosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC39C199866E40091AA1D /* UserInfosModel.m */; };
+		222CC3A2199869770091AA1D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC3A1199869760091AA1D /* LoginService.m */; };
+		222CC3A5199869840091AA1D /* RegisterService.m in Sources */ = {isa = PBXBuildFile; fileRef = 222CC3A4199869840091AA1D /* RegisterService.m */; };
 		224B35111995DAB7009523F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35101995DAB7009523F6 /* Foundation.framework */; };
 		224B35131995DAB7009523F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35121995DAB7009523F6 /* CoreGraphics.framework */; };
 		224B35151995DAB7009523F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B35141995DAB7009523F6 /* UIKit.framework */; };
@@ -28,7 +32,6 @@
 		224B35651995E0E0009523F6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 224B35621995E0E0009523F6 /* SVProgressHUD.bundle */; };
 		224B35661995E0E0009523F6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B35641995E0E0009523F6 /* SVProgressHUD.m */; };
 		224B356A1995E152009523F6 /* InternetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B35691995E152009523F6 /* InternetRequest.m */; };
-		224B35701995E9CB009523F6 /* UserinfosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B356F1995E9CB009523F6 /* UserinfosModel.m */; };
 		224B35761995F00F009523F6 /* UserinfosDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 224B35751995F00F009523F6 /* UserinfosDao.m */; };
 		225579D319960378001B5FCC /* Index0Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 225579D219960378001B5FCC /* Index0Service.m */; };
 		225579D919960398001B5FCC /* Index1Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 225579D819960398001B5FCC /* Index1Service.m */; };
@@ -64,6 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		222CC399199866E40091AA1D /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		222CC39A199866E40091AA1D /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		222CC39B199866E40091AA1D /* UserInfosModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfosModel.h; sourceTree = "<group>"; };
+		222CC39C199866E40091AA1D /* UserInfosModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfosModel.m; sourceTree = "<group>"; };
+		222CC3A0199869760091AA1D /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		222CC3A1199869760091AA1D /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
+		222CC3A3199869840091AA1D /* RegisterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterService.h; sourceTree = "<group>"; };
+		222CC3A4199869840091AA1D /* RegisterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterService.m; sourceTree = "<group>"; };
 		224B350D1995DAB7009523F6 /* Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Club.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224B35101995DAB7009523F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		224B35121995DAB7009523F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,8 +107,6 @@
 		224B35641995E0E0009523F6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		224B35681995E152009523F6 /* InternetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternetRequest.h; path = Tools/InternetRequest/InternetRequest.h; sourceTree = "<group>"; };
 		224B35691995E152009523F6 /* InternetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternetRequest.m; path = Tools/InternetRequest/InternetRequest.m; sourceTree = "<group>"; };
-		224B356E1995E9CB009523F6 /* UserinfosModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserinfosModel.h; path = Models/UserinfosModel.h; sourceTree = "<group>"; };
-		224B356F1995E9CB009523F6 /* UserinfosModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserinfosModel.m; path = Models/UserinfosModel.m; sourceTree = "<group>"; };
 		224B35741995F00F009523F6 /* UserinfosDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserinfosDao.h; path = Dao/UserinfosDao.h; sourceTree = "<group>"; };
 		224B35751995F00F009523F6 /* UserinfosDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserinfosDao.m; path = Dao/UserinfosDao.m; sourceTree = "<group>"; };
 		225579D119960378001B5FCC /* Index0Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Index0Service.h; path = Services/Index0Service.h; sourceTree = "<group>"; };
@@ -162,6 +171,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222CC398199866E40091AA1D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				222CC399199866E40091AA1D /* UserDefaults.h */,
+				222CC39A199866E40091AA1D /* UserDefaults.m */,
+				222CC39B199866E40091AA1D /* UserInfosModel.h */,
+				222CC39C199866E40091AA1D /* UserInfosModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		222CC39F199869650091AA1D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				222CC3A0199869760091AA1D /* LoginService.h */,
+				222CC3A1199869760091AA1D /* LoginService.m */,
+				222CC3A3199869840091AA1D /* RegisterService.h */,
+				222CC3A4199869840091AA1D /* RegisterService.m */,
+			);
+			name = User;
+			path = Services/User;
+			sourceTree = "<group>";
+		};
 		224B35041995DAB7009523F6 = {
 			isa = PBXGroup;
 			children = (
@@ -196,11 +228,11 @@
 		224B35161995DAB7009523F6 /* ProjectModel */ = {
 			isa = PBXGroup;
 			children = (
+				222CC398199866E40091AA1D /* Models */,
 				22557A00199645A3001B5FCC /* Resource */,
 				225579CD1996032A001B5FCC /* Services */,
 				224B355A1995DFB3009523F6 /* Tools */,
 				224B35591995DF9E009523F6 /* Dao */,
-				224B35581995DF96009523F6 /* Models */,
 				224B35481995DD29009523F6 /* Controllers */,
 				224B351F1995DAB7009523F6 /* AppDelegate.h */,
 				224B35201995DAB7009523F6 /* AppDelegate.m */,
@@ -260,15 +292,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		224B35581995DF96009523F6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				224B356E1995E9CB009523F6 /* UserinfosModel.h */,
-				224B356F1995E9CB009523F6 /* UserinfosModel.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		224B35591995DF9E009523F6 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +333,7 @@
 		225579CD1996032A001B5FCC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				222CC39F199869650091AA1D /* User */,
 				225579D719960398001B5FCC /* Index1Service.h */,
 				225579D819960398001B5FCC /* Index1Service.m */,
 				225579D119960378001B5FCC /* Index0Service.h */,
@@ -498,12 +522,15 @@
 				225AFF201997256200680E17 /* MenuCollectionCell.m in Sources */,
 				225579E619960400001B5FCC /* Index3Service.m in Sources */,
 				224B35661995E0E0009523F6 /* SVProgressHUD.m in Sources */,
+				222CC3A5199869840091AA1D /* RegisterService.m in Sources */,
 				224B35211995DAB7009523F6 /* AppDelegate.m in Sources */,
 				22BAA5801997AF7000B1948A /* LoginViewOperation.m in Sources */,
 				22BAA57D19979E5100B1948A /* RegisterViewController.m in Sources */,
 				22BAA57719979C0600B1948A /* LoginViewController.m in Sources */,
 				225579D319960378001B5FCC /* Index0Service.m in Sources */,
+				222CC39D199866E40091AA1D /* UserDefaults.m in Sources */,
 				224B354E1995DD60009523F6 /* Index1ViewController.m in Sources */,
+				222CC3A2199869770091AA1D /* LoginService.m in Sources */,
 				225579E919960C23001B5FCC /* Index4Service.m in Sources */,
 				224B35541995DD78009523F6 /* Index2ViewController.m in Sources */,
 				225AFF11199719EC00680E17 /* BuyViewController.m in Sources */,
@@ -511,11 +538,11 @@
 				22557A0A19965276001B5FCC /* PastItemsTableViewController.m in Sources */,
 				225579FF19964597001B5FCC /* BuyOrRobViewController.m in Sources */,
 				224B356A1995E152009523F6 /* InternetRequest.m in Sources */,
+				222CC39E199866E40091AA1D /* UserInfosModel.m in Sources */,
 				22BAA56F1997762700B1948A /* ItemCell.m in Sources */,
 				224B351D1995DAB7009523F6 /* main.m in Sources */,
 				224B35511995DD6B009523F6 /* Index3ViewController.m in Sources */,
 				224B35471995DD11009523F6 /* Index0ViewController.m in Sources */,
-				224B35701995E9CB009523F6 /* UserinfosModel.m in Sources */,
 				224B35761995F00F009523F6 /* UserinfosDao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

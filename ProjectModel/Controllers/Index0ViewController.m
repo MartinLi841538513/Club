@@ -68,7 +68,7 @@
 
 
 #pragma LoginViewControllerDelegate
--(void)loginActionWithViewController:(UIViewController *)viewController{
+-(void)loginSuccessedActionWithViewController:(UIViewController *)viewController{
     [viewController.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -78,6 +78,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma Notification
+/*
+ 1，设置login status 为登录状态
+ 2，在当前viewcontroller loadData
+ */
+-(void)loginSuccessAction:(NSNotification *)nc{
+    NSString *name = nc.name;
+    NSDictionary *dict = nc.userInfo;
+    NSLog(@"%@    %@     %@",name,dict,nc.object);
+    [self loadData];
+}
 
+//加载数据
+-(void)loadData{
+
+}
 
 @end

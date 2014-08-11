@@ -7,23 +7,22 @@
 //
 
 #import "LoginViewController.h"
-#import "RegisterViewController.h"
+#import "LoginService.h"
 
 @interface LoginViewController ()
 {
     __weak IBOutlet UITextField *loginname;
     __weak IBOutlet UITextField *password;
-    
+    LoginService *loginService;
 }
 @end
 
 @implementation LoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        loginService = [[LoginService alloc] init];
     }
     return self;
 }
@@ -32,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"登录";
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,15 +39,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)loginAction:(id)sender {
-    [self.delegate loginActionWithViewController:self];
+    NSString *name = loginname.text;
+    NSString *passwd = password.text;
+    [loginService loginWithName:name andPasswd:passwd onViewController:self];
 }
 - (IBAction)registerAction:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
-    RegisterViewController *registerViewController = [[RegisterViewController alloc] init];
-    registerViewController = [storyboard instantiateViewControllerWithIdentifier:@"RegisterViewController"];
-    
+    [loginService pushRegisterViewControllerOnViewController:self];
 }
 
+
+#pragma RegisterViewControllerDelegate
+//注册成功回调方法
+-(void)registerSuccessWithLoginname:(NSString *)name andPasswd:(NSString *)passwd{
+    loginname.text = name;
+    password.text = passwd;
+}
 
 @end
