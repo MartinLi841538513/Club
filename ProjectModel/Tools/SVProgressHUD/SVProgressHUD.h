@@ -62,4 +62,6 @@ typedef NSUInteger SVProgressHUDMaskType;
 
 +(void)removeActivityView:(UIActivityIndicatorView *)activityView;
 
++(void)showActivityIndicatorView:(UIActivityIndicatorView *)activityView inView:(UIView *)view;
+
 @end

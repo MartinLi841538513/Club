@@ -848,4 +848,16 @@ CGFloat SVProgressHUDRingThickness = 6;
 
 }
 
++(void)showActivityIndicatorView:(UIActivityIndicatorView *)activityView inView:(UIView *)view{
+    
+    [activityView stopAnimating];
+    CGSize size = CGSizeMake(40, 40);
+    [activityView setFrame:CGRectMake((DeviceFrame.size.width-size.width)/2, (DeviceFrame.size.height-size.height)/2, size.width, size.height)];
+    
+    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    [activityView hidesWhenStopped];
+    activityView.color = [UIColor blackColor];
+    [activityView startAnimating];
+    [view addSubview:activityView];
+}
 @end

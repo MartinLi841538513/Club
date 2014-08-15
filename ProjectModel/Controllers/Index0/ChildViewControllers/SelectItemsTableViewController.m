@@ -56,7 +56,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int row = indexPath.row;
+    NSUInteger row = indexPath.row;
     static NSString *identifier = @"Cell";
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
@@ -74,7 +74,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    int row = indexPath.row;
+    NSUInteger row = indexPath.row;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.tag = row;
     [self.delegate tableView:(UITableView *)tableView didSelectedCell:cell withController:self];

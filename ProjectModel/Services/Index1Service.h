@@ -10,4 +10,16 @@
 
 @interface Index1Service : NSObject
 
+
+-(UIImageView *)previewByCurrentView:(UIImageView *)curView andArray:(NSArray *)views;
+-(UIImageView *)nextViewByCurrentView:(UIImageView *)curView andArray:(NSArray *)views;
+
+-(float)accelerateSpeedOfTimeMomentWithResultValue:(NSUInteger)resultValue andEndTimerTotal:(float)endTimerTotal inViews:(NSArray *)views whenCurrentView:(UIImageView *)currentView;
+-(void)moveCurrentView:(UIImageView *)curView inArray:(NSArray *)views;
+
+-(void)showAwardViewWithDatas:(NSArray *)datas andCurrentView:(UIImageView *)currentView inController:(UIViewController *)viewController;
+
+-(void)loadWebViewWithURLString:(NSString *)URLString onViewContrller:(UIViewController *)viewController;
+
+-(void)presentRewardRecordViewControllerInViewController:(UIViewController *)viewController;
 @end

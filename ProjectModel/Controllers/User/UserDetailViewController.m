@@ -11,6 +11,8 @@
 
 @interface UserDetailViewController ()
 {
+    
+    __weak IBOutlet UIButton *logoutButton;
     UserDetailService *userDetailService;
 }
 @end
@@ -22,6 +24,11 @@
         userDetailService = [[UserDetailService alloc] init];
     }
     return self;
+}
+
+-(void)loadView{
+    [super loadView];
+    logoutButton.frame = CGRectMake(20, DeviceFrame.size.height-NavigationBarFrame.size.height-10, 280, 38);
 }
 
 - (void)viewDidLoad

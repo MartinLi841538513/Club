@@ -15,8 +15,9 @@
 @interface Index0ViewController ()
 {
     __weak IBOutlet UIImageView *imgView;
-    __weak IBOutlet UILabel *robLabel;
-    __weak IBOutlet UILabel *buyLabel;
+    __weak IBOutlet UIButton *robButton;
+    __weak IBOutlet UIButton *buyButton;
+    
     LoginViewOperation *loginViewOperation;
 }
 @end
@@ -34,14 +35,15 @@
 
 -(void)loadView{
     [super loadView];
-    
+    self.automaticallyAdjustsScrollViewInsets = YES;
     UserDefaults *userDefaults = [[UserDefaults alloc] init];
     if (![[userDefaults isLogin] isEqualToString:@"YES"]) {
         loginViewOperation = [[LoginViewOperation alloc] init];
         [loginViewOperation presentLoginViewControllerInViewController:self];
     }
     
-
+    robButton.translatesAutoresizingMaskIntoConstraints = YES;
+    buyButton.translatesAutoresizingMaskIntoConstraints = YES;
 }
 
 - (void)viewDidLoad
@@ -49,33 +51,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *imgTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imgAction:)];
-
-    UITapGestureRecognizer *robTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(robAction:)];
-    UITapGestureRecognizer *buyTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buyAction:)];
     [imgView addGestureRecognizer:imgTap];
-    [robLabel addGestureRecognizer:robTap];
-    [buyLabel addGestureRecognizer:buyTap];
+
     
     float space = 5.0;
     float height = (DeviceFrame.size.height-imgView.frame.origin.y-imgView.frame.size.height-TabBarFrame.size.height-space*3-2)/2.0;
-    robLabel.frame = CGRectMake(0, 231, 300, 100);
-    robLabel.frame = CGRectMake(0, imgView.frame.origin.y+imgView.frame.size.height+space, DeviceFrame.size.width, height);
-    buyLabel.frame = CGRectMake(0, robLabel.frame.origin.y+robLabel.frame.size.height+space, DeviceFrame.size.width, height);
+    robButton.frame = CGRectMake(0, 231, 300, 100);
+    robButton.frame = CGRectMake(0, imgView.frame.origin.y+imgView.frame.size.height+space, DeviceFrame.size.width, height);
+    buyButton.frame = CGRectMake(0, robButton.frame.origin.y+robButton.frame.size.height+space, DeviceFrame.size.width, height);
     
 }
 
 -(void)imgAction:(id)sender{
     self.tabBarController.selectedIndex = 1;
 }
-
--(void)robAction:(id)sender{
+- (IBAction)robAction:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RobViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"BuyOrRobViewController"];
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
--(void)buyAction:(id)sender{
+- (IBAction)buyAction:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     BuyViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"BuyViewController"];
     viewController.hidesBottomBarWhenPushed = YES;

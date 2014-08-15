@@ -10,4 +10,6 @@
 
 @interface Index3Service : NSObject
 -(void)presentUserDetailViewControllerOnViewController:(UIViewController *)viewController;
+-(void)presentFeedBackViewControllerOnViewController:(UIViewController *)viewController;
+-(void)presentQRCodeViewControllerOnViewController:(UIViewController *)viewController;
 @end

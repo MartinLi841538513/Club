@@ -78,7 +78,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    int row = indexPath.row;
+    NSUInteger row = indexPath.row;
     PurchaseCarItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.delegate = self;
     cell.checkImgButton.tag = row;
@@ -97,7 +97,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    int row = indexPath.row;
+    NSUInteger row = indexPath.row;
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         NSArray *cells = [[NSArray alloc] initWithObjects:indexPath, nil];
         [tableview beginUpdates];
@@ -110,36 +110,36 @@
 -(void)checkAction:(id)sender InCell:(UITableViewCell *)cell{
     UIButton *button = (UIButton *)sender;
 
-    int row = button.tag;
-    NSLog(@"checkAction:%d",row);
+    NSUInteger row = button.tag;
+    NSLog(@"checkAction:%lu",(unsigned long)row);
 }
 
 -(void)reduceAction:(id)sender InCell:(UITableViewCell *)cell{
     UIButton *button = (UIButton *)sender;
     PurchaseCarItemCell *itemCell = (PurchaseCarItemCell *)cell;
     itemCell.count.text = [puchaseCarItemsService reduceNumber:itemCell.count];
-    int row = button.tag;
-    NSLog(@"reduceAction:%d",row);
+    NSUInteger row = button.tag;
+    NSLog(@"reduceAction:%lu",(unsigned long)row);
 }
 
 -(void)addAction:(id)sender InCell:(UITableViewCell *)cell{
     UIButton *button = (UIButton *)sender;
     PurchaseCarItemCell *itemCell = (PurchaseCarItemCell *)cell;
     itemCell.count.text = [puchaseCarItemsService addNumber:itemCell.count];
-    int row = button.tag;
-    NSLog(@"addAction:%d",row);
+    NSUInteger row = button.tag;
+    NSLog(@"addAction:%lu",(unsigned long)row);
 }
 
 -(void)deleteAction:(id)sender InCell:(UITableViewCell *)cell{
     UIButton *button = (UIButton *)sender;
-    int row = button.tag;
+    NSUInteger row = button.tag;
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
 //    NSArray *cells = [[NSArray alloc] initWithObjects:indexPath, nil];
 //    [tableview beginUpdates];
 //    [items removeObjectAtIndex:row];
 //    [tableview deleteRowsAtIndexPaths:cells withRowAnimation: UITableViewRowAnimationLeft];
 //    [tableview endUpdates];
-    NSLog(@"deleteAction:%d",row);
+    NSLog(@"deleteAction:%lu",(unsigned long)row);
 }
 
 

@@ -123,7 +123,7 @@
 #pragma UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
-    NSLog(@"didSelect:%d",section);
+    NSLog(@"didSelect:%ld",(long)section);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -161,7 +161,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ItemDetailViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];
     [self.navigationController pushViewController:viewController animated:YES];
-    NSLog(@"didSelect:%d",section);
+    NSLog(@"didSelect:%ld",(long)section);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -174,13 +174,13 @@
 //立即购买
 -(void)buyAction:(id)sender{
     UIButton *button = (UIButton *)sender;
-    NSLog(@"buy:%d",button.tag);
+    NSLog(@"buy:%ld",(long)button.tag);
 }
 
 //加入购物车
 -(void)addAction:(id)sender{
     UIButton *button = (UIButton *)sender;
-    NSLog(@"add:%d",button.tag);
+    NSLog(@"add:%ld",(long)button.tag);
 }
 
 @end

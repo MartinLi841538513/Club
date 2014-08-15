@@ -8,7 +8,7 @@
 
 #import "Index3ViewController.h"
 #import "Index3Service.h"
-
+#import "SVProgressHUD.h"
 @interface Index3ViewController ()
 {
     UITableView *tableview;
@@ -41,7 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.automaticallyAdjustsScrollViewInsets = NO;
-    images = [[NSArray alloc] initWithObjects:@"userIcon",@"account",@"qr_code",@"order",@"attention",@"topic",@"activity",@"jiaoyi",@"return_suggest",@"ic_update", nil];
+    images = [[NSArray alloc] initWithObjects:@"userIcon.jpg",@"account",@"qr_code",@"order",@"attention",@"topic",@"activity",@"jiaoyi",@"return_suggest",@"ic_update", nil];
     titles = [[NSArray alloc] initWithObjects:@"186****1267",@"我的钱包",@"我的二维码",@"我的订单",@"我的关注",@"我的话题",@"我的活动",@"我的二手置换",@"意见反馈",@"版本更新", nil];
     subTitles = [[NSArray alloc] initWithObjects:@"九峰小区",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
 }
@@ -62,8 +62,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    int row = indexPath.section;
-    NSLog(@"%d",row);
+    NSUInteger row = indexPath.section;
+    NSLog(@"%lu",(unsigned long)row);
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
@@ -79,10 +79,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
-    NSLog(@"didSelect:%d",section);
+    NSLog(@"didSelect:%ld",(long)section);
     switch (section) {
         case 0:
             [index3Service presentUserDetailViewControllerOnViewController:self];
+            break;
+        case 2:
+            [index3Service presentQRCodeViewControllerOnViewController:self];
+            break;
+        case 8:
+            [index3Service presentFeedBackViewControllerOnViewController:self];
+            break;
+        case 9:
+            [SVProgressHUD showSuccessWithStatus:@"已是最新版本"];
             break;
         default:
             break;

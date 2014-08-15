@@ -8,7 +8,8 @@
 
 #import "Index3Service.h"
 #import "UserDetailViewController.h"
-
+#import "FeedbackViewController.h"
+#import "QRCodeViewController.h"
 @implementation Index3Service
 
 /*
@@ -20,5 +21,26 @@
     userDetailViewController.hidesBottomBarWhenPushed = YES;
     [viewController.navigationController pushViewController:userDetailViewController animated:YES];
 }
+
+/*
+    用户反馈
+ */
+-(void)presentFeedBackViewControllerOnViewController:(UIViewController *)viewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FeedbackViewController *feedBackViewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedbackViewController"];
+    feedBackViewController.hidesBottomBarWhenPushed = YES;
+    [viewController.navigationController pushViewController:feedBackViewController animated:YES];
+}
+
+/*
+    我的二维码
+ */
+-(void)presentQRCodeViewControllerOnViewController:(UIViewController *)viewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    QRCodeViewController *qrCodeViewController = [storyboard instantiateViewControllerWithIdentifier:@"QRCodeViewController"];
+    qrCodeViewController.hidesBottomBarWhenPushed = YES;
+    [viewController.navigationController pushViewController:qrCodeViewController animated:YES];
+}
+
 
 @end
