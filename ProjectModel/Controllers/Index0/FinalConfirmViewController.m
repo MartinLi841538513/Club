@@ -68,6 +68,7 @@
     UINib *nib = [UINib nibWithNibName:@"ItemInfosCell" bundle:nil];
     [tableview registerNib:nib forCellReuseIdentifier:identifier];
     items = [[NSArray alloc] initWithObjects:@"",@"",@"",@"", nil];
+//    tableview.translatesAutoresizingMaskIntoConstraints = YES;
     tableview.frame = CGRectMake(0, tableHeader.frame.origin.y+tableHeader.frame.size.height+3, DeviceFrame.size.width, items.count*34+60);
     totalPrice.frame = CGRectMake(218, tableview.frame.origin.y+tableview.frame.size.height-60, 87, 26);
     tips.frame = CGRectMake(3, tableview.frame.origin.y+tableview.frame.size.height-30, DeviceFrame.size.width, 40);
