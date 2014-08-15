@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-enum Status{
-    Rob = 0,
-    Buy
-};
-
-@interface BuyOrRobViewController : UIViewController
+@interface RobViewController : UIViewController
 
 @property(nonatomic,assign)int status;
 @end

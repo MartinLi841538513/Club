@@ -8,6 +8,7 @@
 
 #import "BuyViewController.h"
 #import "MenuCollectionCell.h"
+#import "ItemDetailViewController.h"
 
 @interface BuyViewController ()
 {
@@ -75,6 +76,9 @@
     collectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, 320, 33) collectionViewLayout: layout];
     [collectionview setShowsHorizontalScrollIndicator:NO];
     [collectionview registerClass:[MenuCollectionCell class] forCellWithReuseIdentifier: @"MenuCollectionCell"];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;//解决cellForItemAtIndexPath not called问题
+    
     UINib *nib = [UINib nibWithNibName:@"MenuCollectionCell" bundle:nil];
     [collectionview registerNib:nib forCellWithReuseIdentifier:collectionviewCellIdentifier];
     collectionview.delegate = self;
@@ -153,6 +157,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ItemDetailViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"ItemDetailViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
     NSLog(@"didSelect:%d",section);
 }
 
@@ -160,7 +168,7 @@
     return 93;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 0;
 }
 
 //立即购买

@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Index3Service : NSObject
-
+-(void)presentUserDetailViewControllerOnViewController:(UIViewController *)viewController;
 @end

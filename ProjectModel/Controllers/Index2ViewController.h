@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Index2ViewController : UIViewController
+@interface Index2ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @end

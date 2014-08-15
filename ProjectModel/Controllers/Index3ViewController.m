@@ -7,28 +7,30 @@
 //
 
 #import "Index3ViewController.h"
-#import "UserDetailViewController.h"
+#import "Index3Service.h"
 
 @interface Index3ViewController ()
 {
     UITableView *tableview;
+    NSArray *images;
+    NSArray *titles;
+    NSArray *subTitles;
+    Index3Service *index3Service;
 }
 @end
 
 @implementation Index3ViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if (self = [super initWithCoder:aDecoder]) {
+        index3Service = [[Index3Service alloc] init];
     }
     return self;
 }
 
 -(void)loadView{
     [super loadView];
-    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, NavigationBarFrame.size.height+StatusBarFrame.size.height, DeviceFrame.size.width,64)];
+    tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, NavigationBarFrame.size.height+StatusBarFrame.size.height, DeviceFrame.size.width,DeviceFrame.size.height-NavigationBarFrame.size.height-TabBarFrame.size.height-StatusBarFrame.size.height)];
     tableview.delegate = self;
     tableview.dataSource = self;
     [self.view addSubview:tableview];
@@ -38,7 +40,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    images = [[NSArray alloc] initWithObjects:@"userIcon",@"account",@"qr_code",@"order",@"attention",@"topic",@"activity",@"jiaoyi",@"return_suggest",@"ic_update", nil];
+    titles = [[NSArray alloc] initWithObjects:@"186****1267",@"我的钱包",@"我的二维码",@"我的订单",@"我的关注",@"我的话题",@"我的活动",@"我的二手置换",@"意见反馈",@"版本更新", nil];
+    subTitles = [[NSArray alloc] initWithObjects:@"九峰小区",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,7 +54,7 @@
 
 #pragma UITableviewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -57,14 +62,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    int row = indexPath.section;
+    NSLog(@"%d",row);
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    cell.imageView.image = [UIImage imageNamed:@"userIcon.png"];
-    cell.textLabel.text = @"王宝强";
+    cell.imageView.frame = CGRectMake(7, 7, 25, 25);
+    cell.imageView.image = [UIImage imageNamed:[images objectAtIndex:row]];
+    cell.textLabel.text = [titles objectAtIndex:row];
+    cell.detailTextLabel.text = [subTitles objectAtIndex:row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -72,16 +80,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
     NSLog(@"didSelect:%d",section);
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UserDetailViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"UserDetailViewController"];
-    [self.navigationController pushViewController:viewController animated:YES];
+    switch (section) {
+        case 0:
+            [index3Service presentUserDetailViewControllerOnViewController:self];
+            break;
+        default:
+            break;
+    }
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    return 50;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 4;
 }
 
 
