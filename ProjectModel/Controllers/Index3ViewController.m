@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"githubtest");
+    //NSLog(@"githubtest");
 }
 
 - (void)didReceiveMemoryWarning
